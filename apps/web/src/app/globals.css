@@ -1,26 +1,137 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5e9d0;
+  --foreground: #171412;
+  --paper: #fff7e7;
+  --ink: #171412;
+  --umber: #3a2a22;
+  --coral: #f22d21;
+  --coral-dark: #c91f16;
+  --cyan: #10abdd;
+  --blue: #057bb8;
+  --gold: #f5c500;
+  --soft-gold: #f3d878;
+  --rose: #c98273;
+  --sage: #7e8a68;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono",
+    monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 16% 10%, rgba(245, 197, 0, 0.14), transparent 25rem),
+    radial-gradient(circle at 90% 24%, rgba(16, 171, 221, 0.12), transparent 26rem),
+    linear-gradient(180deg, #f5e9d0 0%, #fff0cf 58%, #f7e6c7 100%);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+a {
+  text-decoration-thickness: 2px;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.butterfly-line {
+  position: absolute;
+  pointer-events: none;
+  border: 1.5px solid rgba(183, 101, 69, 0.24);
+  border-radius: 48% 52% 46% 54%;
+}
+
+.butterfly-line::before,
+.butterfly-line::after {
+  content: "";
+  position: absolute;
+  inset: 16%;
+  border: 1.5px dashed rgba(183, 101, 69, 0.2);
+  border-radius: 58% 42% 52% 48%;
+}
+
+.butterfly-line::after {
+  inset: 30%;
+  border-style: dotted;
+}
+
+.butterfly-mini {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 22px;
+}
+
+.butterfly-mini::before,
+.butterfly-mini::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  width: 15px;
+  height: 18px;
+  border: 3px solid var(--gold);
+  border-radius: 70% 30% 70% 30%;
+}
+
+.butterfly-mini::before {
+  left: 0;
+  transform: rotate(-28deg);
+}
+
+.butterfly-mini::after {
+  right: 0;
+  transform: rotate(28deg) scaleX(-1);
+}
+
+.butterfly-mini-coral::before,
+.butterfly-mini-coral::after {
+  border-color: var(--coral);
+}
+
+.hero-photo {
+  border-radius: 38% 62% 18% 82% / 26% 22% 78% 74%;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.section-title span {
+  height: 2px;
+  width: min(8rem, 20vw);
+  background: var(--cyan);
+}
+
+.section-title h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 900;
+  color: var(--ink);
 }

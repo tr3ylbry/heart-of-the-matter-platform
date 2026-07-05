@@ -3,7 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Heart of the Matter School of Music",
-  description: "Web app for Heart of the Matter School of Music.",
+  description:
+    "Heart-centered music lessons for students growing confidence, creativity, and a lifelong love of music.",
 };
 
 export default function RootLayout({

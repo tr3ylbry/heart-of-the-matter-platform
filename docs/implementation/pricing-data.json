@@ -1,0 +1,39 @@
+{
+  "pricing_naming_update": {
+    "source_note": "Liz requested Caterpillar, Chrysalis, and Butterfly for the three pricing/lesson time levels.",
+    "recommended_mapping": [
+      {
+        "new_name": "Caterpillar",
+        "previous_name": "Steady",
+        "lesson_length_minutes": 30,
+        "lessons_per_month": 4,
+        "standard_monthly": 200,
+        "theme": "Beginning the musical journey; building foundations."
+      },
+      {
+        "new_name": "Chrysalis",
+        "previous_name": "Momentum",
+        "lesson_length_minutes": 45,
+        "lessons_per_month": 4,
+        "standard_monthly": 280,
+        "theme": "Focused growth and transformation; recommended middle tier."
+      },
+      {
+        "new_name": "Butterfly",
+        "previous_name": "Mastery",
+        "lesson_length_minutes": 60,
+        "lessons_per_month": 4,
+        "standard_monthly": 345,
+        "theme": "Full expression, confidence, artistry, and advanced growth."
+      }
+    ],
+    "positioning_note": "This naming aligns with the butterfly/transformation brand story and should replace Steady/Momentum/Mastery if Liz confirms."
+  },
+  "trial_lesson": {
+    "lesson_length_minutes": 30,
+    "price": 0,
+    "label": "Free Trial Lesson",
+    "source_note": "Liz sent a promotional image stating: Start your musical journey with a FREE trial lesson.",
+    "implementation_note": "Use as primary first-booking CTA. Confirm whether this replaces the previous $45 trial entirely or is a launch promo."
+  }
+}
