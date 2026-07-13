@@ -2,10 +2,11 @@ import Link from "next/link";
 import { ButterflyMark } from "@/components/ButterflyMark";
 
 const quickLinks = [
+  { label: "Home", href: "/" },
   { label: "Lessons", href: "/lessons" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Book", href: "/book" },
-  { label: "About", href: "/#about" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -26,8 +27,11 @@ export function SiteFooter() {
           </h2>
           <address className="mt-4 space-y-2 not-italic text-sm font-semibold leading-6 text-[var(--umber)]">
             <p>
-              <a href="mailto:elizabethsullivanmusic@gmail.com" className="hover:text-[var(--coral)]">
-                elizabethsullivanmusic@gmail.com
+              <a
+                href="mailto:heartofthemattermusic@gmail.com"
+                className="[overflow-wrap:anywhere] hover:text-[var(--coral)]"
+              >
+                heartofthemattermusic@gmail.com
               </a>
             </p>
             <p>Serving students online and in person</p>
@@ -55,13 +59,17 @@ export function SiteFooter() {
           <h2 className="text-sm font-black uppercase tracking-[0.2em] text-[var(--ink)]">
             Follow Along
           </h2>
-          <div className="mt-4 flex gap-3" aria-label="Social links coming soon">
-            {["f", "ig", "yt", "tk"].map((label) => (
+          {/* TODO: Replace social placeholders with real Instagram and YouTube URLs. */}
+          <div
+            className="mt-4 grid gap-2"
+            aria-label="Social profiles coming soon"
+          >
+            {["Instagram", "YouTube"].map((label) => (
               <span
                 key={label}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-xs font-black uppercase text-white"
+                className="text-sm font-bold text-[var(--umber)]"
               >
-                {label}
+                {label} - Coming soon
               </span>
             ))}
           </div>
@@ -71,14 +79,13 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="mx-auto mt-8 flex max-w-7xl flex-col gap-3 border-t border-[rgba(58,42,34,0.1)] pt-5 text-xs font-semibold text-[var(--umber)] sm:flex-row sm:items-center sm:justify-between">
-        <p>(c) 2026 Heart of the Matter School of Music. All rights reserved.</p>
-        <div className="flex gap-5">
-          <Link href="#" className="hover:text-[var(--coral)]">
-            Privacy Policy
-          </Link>
-          <Link href="#" className="hover:text-[var(--coral)]">
-            Terms
-          </Link>
+        <p>
+          (c) 2026 Heart of the Matter School of Music. All rights reserved.
+        </p>
+        {/* TODO: Link Privacy Policy and Terms when the documents are approved. */}
+        <div className="flex gap-5" aria-label="Legal pages coming soon">
+          <span>Privacy Policy - Coming soon</span>
+          <span>Terms - Coming soon</span>
         </div>
       </div>
     </footer>

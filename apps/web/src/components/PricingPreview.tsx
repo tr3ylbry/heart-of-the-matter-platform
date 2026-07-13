@@ -1,16 +1,26 @@
 import Link from "next/link";
 import { pricingTiers } from "@/data/pricing";
 
-export function PricingPreview() {
+type PricingPreviewProps = {
+  showDetailsLink?: boolean;
+  title?: string;
+  description?: string;
+};
+
+export function PricingPreview({
+  showDetailsLink = true,
+  title = "Simple, Flexible Pricing",
+  description = "Choose the weekly rhythm that supports each student.",
+}: PricingPreviewProps) {
   return (
     <section id="pricing" className="px-4 py-12 sm:px-6 lg:px-10">
       <div className="mx-auto max-w-6xl rounded-[32px] border border-[rgba(58,42,34,0.14)] bg-[rgba(255,247,231,0.58)] p-4 shadow-[0_24px_80px_rgba(58,42,34,0.1)] sm:p-6 lg:p-8">
         <div className="text-center">
           <h2 className="font-serif text-4xl font-black text-[var(--ink)] sm:text-5xl">
-            Simple, Flexible Pricing
+            {title}
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-base font-semibold text-[var(--umber)]">
-            Choose the weekly rhythm that supports each student.
+            {description}
           </p>
         </div>
 
@@ -18,7 +28,7 @@ export function PricingPreview() {
           {pricingTiers.map((tier) => (
             <article
               key={tier.name}
-              className={`relative overflow-hidden rounded-2xl border bg-[var(--paper)] shadow-[0_18px_55px_rgba(58,42,34,0.1)] ${
+              className={`relative flex flex-col overflow-hidden rounded-2xl border bg-[var(--paper)] shadow-[0_18px_55px_rgba(58,42,34,0.1)] ${
                 tier.featured
                   ? "border-[var(--coral)] lg:-mt-4"
                   : "border-[rgba(58,42,34,0.12)]"
@@ -45,30 +55,41 @@ export function PricingPreview() {
                   {tier.name}
                 </h3>
               </div>
-              <div className="p-6">
+              <div className="flex flex-1 flex-col p-6">
                 <p className="font-serif text-5xl font-black text-[var(--ink)]">
                   {tier.price}
-                  <span className="font-sans text-base font-bold"> / month</span>
+                  <span className="font-sans text-base font-bold">
+                    {" "}
+                    / month
+                  </span>
                 </p>
                 <p className="mt-2 text-sm font-black uppercase tracking-[0.14em] text-[var(--coral)]">
                   {tier.lessonsPerMonth}
                 </p>
-                <p className="mt-5 min-h-20 text-base leading-7 text-[var(--umber)]">
+                <p className="mt-5 flex-1 text-base leading-7 text-[var(--umber)]">
                   {tier.description}
                 </p>
+                <Link
+                  href="/book"
+                  className="mt-6 inline-flex min-h-12 items-center justify-center rounded-lg bg-[var(--coral)] px-5 py-3 text-center text-sm font-black text-white shadow-[0_14px_30px_rgba(226,43,32,0.2)] transition hover:-translate-y-0.5 hover:bg-[var(--coral-dark)]"
+                >
+                  Start with a Free Trial
+                </Link>
               </div>
             </article>
           ))}
         </div>
 
-        <div className="mt-7 text-center">
-          <Link
-            href="#pricing"
-            className="inline-flex min-h-12 items-center justify-center rounded-lg px-5 py-3 text-base font-black text-[var(--coral)] underline decoration-[var(--gold)] decoration-2 underline-offset-8 hover:text-[var(--coral-dark)]"
-          >
-            View full pricing details
-          </Link>
-        </div>
+        {showDetailsLink ? (
+          <div className="mt-7 text-center">
+            <Link
+              href="/pricing"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg px-5 py-3 text-base font-black text-[var(--coral)] underline decoration-[var(--gold)] decoration-2 underline-offset-8 hover:text-[var(--coral-dark)]"
+            >
+              View full pricing details
+            </Link>
+          </div>
+        ) : null}
       </div>
     </section>
   );

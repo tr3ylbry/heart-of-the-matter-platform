@@ -25,11 +25,11 @@ export function PageHero({
     <section className="relative overflow-hidden px-4 py-16 sm:px-6 lg:px-10 lg:py-20">
       <div className="butterfly-line left-[-90px] top-10 h-72 w-72 opacity-40" />
       <div className="butterfly-line right-[-120px] bottom-[-40px] h-80 w-80 opacity-30" />
-      <div className="relative z-10 mx-auto max-w-5xl text-center">
+      <div className="relative z-10 mx-auto min-w-0 max-w-5xl text-center">
         <p className="text-sm font-black uppercase tracking-[0.28em] text-[var(--coral)]">
           {eyebrow}
         </p>
-        <h1 className="mx-auto mt-5 max-w-4xl font-serif text-5xl font-black leading-[0.98] text-[var(--ink)] sm:text-6xl lg:text-7xl">
+        <h1 className="mx-auto mt-5 max-w-4xl font-serif text-4xl font-black leading-[1.02] text-[var(--ink)] sm:text-6xl sm:leading-[0.98] lg:text-7xl">
           {title}
         </h1>
         <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-[var(--umber)] sm:text-xl">

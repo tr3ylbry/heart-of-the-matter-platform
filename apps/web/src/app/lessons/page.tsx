@@ -46,13 +46,13 @@ export default function LessonsPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <PageHero
           eyebrow="Private Music Lessons"
           title="Lessons that meet each student where they are"
           description="Music lessons at Heart of the Matter are personalized, joyful, and grounded in strong musicianship. Students can explore piano, voice, guitar, bass, drums, songwriting, theory, and creative expression."
           primaryCta={{ label: "Book a Free Trial", href: "/book" }}
-          secondaryCta={{ label: "View Pricing", href: "/#pricing" }}
+          secondaryCta={{ label: "View Pricing", href: "/pricing" }}
         />
         <LessonDetailGrid />
 
@@ -67,7 +67,7 @@ export default function LessonsPage() {
               {pathways.map((pathway) => (
                 <article
                   key={pathway.title}
-                  className="rounded-[28px] border border-[rgba(58,42,34,0.12)] bg-[rgba(255,247,231,0.72)] p-7 shadow-[0_18px_55px_rgba(58,42,34,0.08)]"
+                  className="rounded-2xl border border-[rgba(58,42,34,0.1)] bg-[rgba(255,247,231,0.62)] p-7 shadow-[0_8px_24px_rgba(58,42,34,0.05)]"
                 >
                   <h3 className="font-serif text-4xl font-black text-[var(--ink)]">
                     {pathway.title}
@@ -95,7 +95,7 @@ export default function LessonsPage() {
               {steps.map((step, index) => (
                 <article
                   key={step.title}
-                  className="rounded-3xl bg-[rgba(255,247,231,0.8)] p-6 shadow-sm"
+                  className="rounded-2xl border border-[rgba(58,42,34,0.08)] bg-[rgba(255,247,231,0.7)] p-6"
                 >
                   <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--coral)] text-lg font-black text-white">
                     {index + 1}

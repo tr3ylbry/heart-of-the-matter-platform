@@ -23,7 +23,7 @@ export default function ContactPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <PageHero
           eyebrow="Contact"
           title="Let us start the conversation"
@@ -31,38 +31,49 @@ export default function ContactPage() {
           primaryCta={{ label: "Book a Free Trial", href: "/book" }}
           secondaryCta={{
             label: "Email Elizabeth",
-            href: "mailto:elizabethsullivanmusic@gmail.com",
+            href: "mailto:heartofthemattermusic@gmail.com",
           }}
         />
 
         <section className="px-4 py-14 sm:px-6 lg:px-10">
           <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
-            <article className="rounded-[28px] border border-[rgba(58,42,34,0.12)] bg-[rgba(255,247,231,0.72)] p-7 shadow-[0_18px_55px_rgba(58,42,34,0.08)]">
+            <a
+              href="mailto:heartofthemattermusic@gmail.com"
+              aria-label="Email Elizabeth at heartofthemattermusic@gmail.com"
+              className="group min-w-0 rounded-2xl border border-[rgba(58,42,34,0.1)] bg-[rgba(255,247,231,0.64)] p-7 shadow-[0_8px_24px_rgba(58,42,34,0.05)] transition hover:-translate-y-0.5 hover:border-[var(--coral)]"
+            >
               <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--coral)]">
                 Email
               </p>
-              <h2 className="mt-3 break-words font-serif text-3xl font-black text-[var(--ink)]">
-                elizabethsullivanmusic@gmail.com
+              <h2 className="mt-3 font-serif text-2xl font-black text-[var(--ink)] [overflow-wrap:anywhere] sm:text-3xl">
+                heartofthemattermusic@gmail.com
               </h2>
-            </article>
-            <article className="rounded-[28px] border border-[rgba(58,42,34,0.12)] bg-[rgba(255,247,231,0.72)] p-7 shadow-[0_18px_55px_rgba(58,42,34,0.08)]">
+              <span className="mt-4 inline-block text-sm font-black text-[var(--coral)] underline underline-offset-4 group-hover:text-[var(--coral-dark)]">
+                Send an email
+              </span>
+            </a>
+            <article className="min-w-0 rounded-2xl border border-[rgba(58,42,34,0.1)] bg-[rgba(255,247,231,0.64)] p-7 shadow-[0_8px_24px_rgba(58,42,34,0.05)]">
               <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--coral)]">
                 Location
               </p>
-              <h2 className="mt-3 font-serif text-3xl font-black text-[var(--ink)]">
+              <h2 className="mt-3 font-serif text-2xl font-black text-[var(--ink)] sm:text-3xl">
                 Serving students online and in person
               </h2>
             </article>
-            <article className="rounded-[28px] border border-[rgba(58,42,34,0.12)] bg-[rgba(255,247,231,0.72)] p-7 shadow-[0_18px_55px_rgba(58,42,34,0.08)]">
+            <article className="min-w-0 rounded-2xl border border-[rgba(58,42,34,0.1)] bg-[rgba(255,247,231,0.64)] p-7 shadow-[0_8px_24px_rgba(58,42,34,0.05)]">
               <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--coral)]">
                 Socials
               </p>
-              <div className="mt-4 flex gap-3">
-                <span className="rounded-full bg-[var(--ink)] px-4 py-2 text-sm font-black uppercase text-white">
-                  Instagram
+              {/* TODO: Replace social placeholders with real Instagram and YouTube URLs. */}
+              <div
+                className="mt-4 flex flex-wrap gap-3"
+                aria-label="Social profiles coming soon"
+              >
+                <span className="rounded-full border border-[rgba(58,42,34,0.24)] bg-[var(--paper)] px-4 py-2 text-sm font-bold text-[var(--umber)]">
+                  Instagram - Coming soon
                 </span>
-                <span className="rounded-full bg-[var(--ink)] px-4 py-2 text-sm font-black uppercase text-white">
-                  YouTube
+                <span className="rounded-full border border-[rgba(58,42,34,0.24)] bg-[var(--paper)] px-4 py-2 text-sm font-bold text-[var(--umber)]">
+                  YouTube - Coming soon
                 </span>
               </div>
             </article>
@@ -76,17 +87,17 @@ export default function ContactPage() {
               <h2>How We Can Help</h2>
               <span />
             </div>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-5">
               {inquiryTypes.map((type) => (
                 <article
                   key={type}
-                  className="rounded-3xl border border-[rgba(58,42,34,0.12)] bg-[rgba(255,247,231,0.72)] p-5 text-center shadow-[0_18px_55px_rgba(58,42,34,0.08)]"
+                  className="rounded-2xl border border-[rgba(58,42,34,0.1)] bg-[rgba(255,247,231,0.62)] p-4 text-center shadow-[0_8px_24px_rgba(58,42,34,0.05)] last:col-span-2 lg:last:col-span-1"
                 >
                   <span
                     aria-hidden="true"
                     className="mx-auto block h-12 w-12 rounded-full border-[3px] border-[var(--cyan)] bg-[var(--paper)]"
                   />
-                  <h3 className="mt-4 font-serif text-2xl font-black text-[var(--ink)]">
+                  <h3 className="mt-4 font-serif text-xl font-black text-[var(--ink)] sm:text-2xl">
                     {type}
                   </h3>
                 </article>
@@ -106,7 +117,7 @@ export default function ContactPage() {
               href="/book"
               className="inline-flex min-h-14 shrink-0 items-center justify-center rounded-lg bg-[var(--coral)] px-7 py-4 text-base font-black text-white shadow-[0_16px_34px_rgba(242,45,33,0.24)] transition hover:-translate-y-0.5 hover:bg-[var(--coral-dark)] focus:outline-none focus:ring-4 focus:ring-[rgba(242,45,33,0.25)]"
             >
-              Book Your Free Trial
+              Book a Free Trial
             </Link>
           </div>
         </section>
