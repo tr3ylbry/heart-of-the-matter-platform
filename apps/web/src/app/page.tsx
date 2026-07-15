@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { LessonsGrid } from "@/components/LessonsGrid";
 import { MissionStrip } from "@/components/MissionStrip";
 import { PricingPreview } from "@/components/PricingPreview";
+import { ProgramsPreview } from "@/components/ProgramsPreview";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <MissionStrip />
         <LessonsGrid />
+        <ProgramsPreview />
         <PricingPreview />
         <FounderSection />
         <FinalCTA />

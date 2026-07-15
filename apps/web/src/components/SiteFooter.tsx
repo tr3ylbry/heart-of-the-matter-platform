@@ -4,6 +4,7 @@ import { ButterflyMark } from "@/components/ButterflyMark";
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "Lessons", href: "/lessons" },
+  { label: "Programs", href: "/programs" },
   { label: "Pricing", href: "/pricing" },
   { label: "Book", href: "/book" },
   { label: "About", href: "/about" },

@@ -8,6 +8,7 @@ import { ButterflyMark } from "@/components/ButterflyMark";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Lessons", href: "/lessons" },
+  { label: "Programs", href: "/programs" },
   { label: "Pricing", href: "/pricing" },
   { label: "Book", href: "/book" },
   { label: "About", href: "/about" },
@@ -35,7 +36,7 @@ export function SiteHeader() {
 
           <nav
             aria-label="Primary navigation"
-            className="hidden items-center gap-7 text-sm font-bold text-[var(--ink)] lg:flex"
+            className="hidden items-center gap-5 text-sm font-bold text-[var(--ink)] xl:flex"
           >
             {navItems.map((item) => (
               <Link
@@ -57,7 +58,7 @@ export function SiteHeader() {
               isMenuOpen ? "Close navigation menu" : "Open navigation menu"
             }
             onClick={() => setIsMenuOpen((open) => !open)}
-            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg border-2 border-[var(--ink)] bg-[var(--paper)] px-3 py-2 text-sm font-black text-[var(--ink)] lg:hidden"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg border-2 border-[var(--ink)] bg-[var(--paper)] px-3 py-2 text-sm font-black text-[var(--ink)] xl:hidden"
           >
             <span aria-hidden="true" className="grid w-4 gap-1">
               <span className="block h-0.5 w-4 bg-current" />
@@ -69,7 +70,7 @@ export function SiteHeader() {
 
           <Link
             href="/book"
-            className="hidden min-h-12 items-center justify-center rounded-lg bg-[var(--coral)] px-5 py-3 text-sm font-black text-white shadow-[0_14px_30px_rgba(226,43,32,0.24)] transition hover:-translate-y-0.5 hover:bg-[var(--coral-dark)] lg:inline-flex"
+            className="hidden min-h-12 items-center justify-center rounded-lg bg-[var(--coral)] px-5 py-3 text-sm font-black text-white shadow-[0_14px_30px_rgba(226,43,32,0.24)] transition hover:-translate-y-0.5 hover:bg-[var(--coral-dark)] xl:inline-flex"
           >
             Book a Free Trial
           </Link>
@@ -79,7 +80,7 @@ export function SiteHeader() {
           <nav
             id="mobile-navigation"
             aria-label="Mobile navigation"
-            className="mt-3 grid gap-1 border-t border-[rgba(58,42,34,0.12)] pt-3 lg:hidden"
+            className="mt-3 grid gap-1 border-t border-[rgba(58,42,34,0.12)] pt-3 xl:hidden"
           >
             {navItems.map((item) => (
               <Link
