@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 const bookingSteps = [
   {
     title: "Choose your lesson",
@@ -32,7 +34,6 @@ export function getAcuitySchedulerUrl() {
 export function AcuityEmbed() {
   const schedulerUrl = getAcuitySchedulerUrl();
 
-  // TODO: Confirm final Acuity embed URL after Liz configures appointment types and Google Calendar sync.
   if (schedulerUrl) {
     return (
       <section
@@ -51,16 +52,29 @@ export function AcuityEmbed() {
             >
               Choose your lesson time.
             </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base font-semibold leading-7 text-[var(--umber)]">
+              Free trial lessons are virtual and available once per student.
+            </p>
           </div>
-          <div className="mt-9 overflow-hidden rounded-2xl border border-[rgba(58,42,34,0.12)] bg-white shadow-[0_18px_55px_rgba(58,42,34,0.08)]">
+          <div className="mt-9 min-w-0 max-w-full overflow-hidden rounded-2xl border border-[rgba(58,42,34,0.12)] bg-white shadow-[0_18px_55px_rgba(58,42,34,0.08)]">
             <iframe
               src={schedulerUrl}
-              title="Schedule a lesson with Heart of the Matter School of Music"
+              title="Heart of the Matter School of Music booking scheduler"
+              width="100%"
+              height="800"
+              frameBorder="0"
+              allow="payment"
               loading="lazy"
               referrerPolicy="strict-origin-when-cross-origin"
-              className="h-[900px] w-full border-0 sm:h-[1000px]"
+              className="block min-h-[800px] w-full max-w-full border-0"
             />
           </div>
+          {/* TODO: Confirm Zoom integration is connected before public launch. */}
+          <Script
+            id="acuity-scheduling-embed-script"
+            src="https://embed.acuityscheduling.com/js/embed.js"
+            strategy="afterInteractive"
+          />
         </div>
       </section>
     );
