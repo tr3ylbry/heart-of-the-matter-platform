@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ButterflyMark } from "@/components/ButterflyMark";
+import { socialLinks } from "@/data/socials";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -60,19 +61,20 @@ export function SiteFooter() {
           <h2 className="text-sm font-black uppercase tracking-[0.2em] text-[var(--ink)]">
             Follow Along
           </h2>
-          {/* TODO: Replace social placeholders with real Instagram and YouTube URLs. */}
-          <div
-            className="mt-4 grid gap-2"
-            aria-label="Social profiles coming soon"
-          >
-            {["Instagram", "YouTube"].map((label) => (
-              <span
-                key={label}
-                className="text-sm font-bold text-[var(--umber)]"
-              >
-                {label} - Coming soon
-              </span>
-            ))}
+          {/* TODO: Replace the YouTube placeholder with the real URL. */}
+          <div className="mt-4 grid gap-2" aria-label="Social profiles">
+            <a
+              href={socialLinks.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Heart of the Matter School of Music on Instagram (opens in a new tab)"
+              className="w-fit text-sm font-bold text-[var(--umber)] underline decoration-[var(--coral)] underline-offset-4 hover:text-[var(--coral)]"
+            >
+              Instagram
+            </a>
+            <span className="text-sm font-bold text-[var(--umber)]">
+              YouTube - Coming soon
+            </span>
           </div>
           <p className="mt-4 text-sm font-semibold text-[var(--umber)]">
             Where music meets heart.

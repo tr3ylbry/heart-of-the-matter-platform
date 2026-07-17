@@ -4,6 +4,7 @@ import { ContactFormPreview } from "@/components/ContactFormPreview";
 import { PageHero } from "@/components/PageHero";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { socialLinks } from "@/data/socials";
 
 export const metadata: Metadata = {
   title: "Contact | Heart of the Matter School of Music",
@@ -64,14 +65,20 @@ export default function ContactPage() {
               <p className="text-sm font-black uppercase tracking-[0.2em] text-[var(--coral)]">
                 Socials
               </p>
-              {/* TODO: Replace social placeholders with real Instagram and YouTube URLs. */}
+              {/* TODO: Replace the YouTube placeholder with the real URL. */}
               <div
                 className="mt-4 flex flex-wrap gap-3"
-                aria-label="Social profiles coming soon"
+                aria-label="Social profiles"
               >
-                <span className="rounded-full border border-[rgba(58,42,34,0.24)] bg-[var(--paper)] px-4 py-2 text-sm font-bold text-[var(--umber)]">
-                  Instagram - Coming soon
-                </span>
+                <a
+                  href={socialLinks.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Heart of the Matter School of Music on Instagram (opens in a new tab)"
+                  className="rounded-full border border-[var(--coral)] bg-[var(--paper)] px-4 py-2 text-sm font-bold text-[var(--ink)] transition hover:bg-[rgba(226,43,32,0.08)]"
+                >
+                  Instagram
+                </a>
                 <span className="rounded-full border border-[rgba(58,42,34,0.24)] bg-[var(--paper)] px-4 py-2 text-sm font-bold text-[var(--umber)]">
                   YouTube - Coming soon
                 </span>
